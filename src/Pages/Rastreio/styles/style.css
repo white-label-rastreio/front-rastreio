@@ -1,0 +1,40 @@
+.rastreioContentArea{
+    width: 70%;
+    padding-top: 100px;
+}
+.contentArea, .rastreioContentArea, .bannerHome{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contentArea{
+    flex-direction: column;
+}
+.bannerHome{
+    width: 100vw;
+    background-color: #2ac965;
+    height: 100%;
+    padding: 30px 0;
+}
+.bannerHomeContent{
+    flex-direction: column;
+}
+.bannerHomeContent p{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 29px;
+    text-align: left;
+    color: #ffffff;
+}
+.conteudosEmCardHome{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    margin: 140px 0 100px 0;
+}
+.textoEImagemDoBannerHome{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
