@@ -30,4 +30,9 @@ export const CardHomeWrapper = styled.div`
         line-height: 60px !important;
         color: #3c3f52 !important;
     }
+
+    @media (max-width: 1441px) {
+        width: 40%;
+    }
+
 `
