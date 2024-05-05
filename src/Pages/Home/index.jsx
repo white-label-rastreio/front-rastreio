@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import headlineHome from './../../assets/img/headlineHome.svg';
 import { InputHome } from '../../Components/inputHome';
 import { CardHome } from '../../Components/CardHome';
@@ -10,9 +10,13 @@ import { Link, useNavigate } from "react-router-dom";
 import entregaImg from './../../assets/img/rastreamento.png';
 import codigoImg from './../../assets/img/codigo.png';
 import ilustrationImg from './../../assets/img/ilustration.png';
+import { api } from '../../services/api';
+import {usuarioAutenticado} from './../../services/auth'
 
 export default function Home() {
+    const [codigoRastreio, setCodigoRastreio] = useState(''); 
     const navigate = useNavigate();
+    
     const conteudoCards = [
         {
             imagem: entregaImg,
@@ -28,8 +32,32 @@ export default function Home() {
         }
     ]
 
-    function clickSearch (){
-        navigate('/rastreio');
+    async function buscarPacote (){
+        const { data, status } = await api.get('/postagem/' + codigoRastreio, {bearerToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNsdnR0d2t1ZDAwMDB0N3FuaHFzdXg4dWQiLCJpYXQiOjE3MTQ5MzE0NTAsImV4cCI6MTcxNTAxNzg1MH0.8WrbvRAtJQQW7_Bkeg86RmN1CWztcc2oQ25VktMdSDA'});
+        if(status === 200){
+            console.log('Status 200')
+            const dados = {
+                codigoRastreio: data.codigoRastreio,
+                ultimaAtualizacao: data.ultimaAtualizacao,
+                
+                interacoesPedido: data.interacoesPedido.map(interacao => ({
+                    data: interacao.data,
+                    hora: interacao.hora,
+                    descricao: interacao.descricao,
+                    pais: interacao.pais
+                })),
+
+                enderecoEntrega: {
+                    nome: data.enderecoEntrega.nome,
+                    rua: data.enderecoEntrega.rua,
+                    bairro: data.enderecoEntrega.bairro,
+                    cep: data.enderecoEntrega.cep
+                },
+            }
+            console.log("objeto criado")
+            localStorage.setItem("dadosRastreamento", JSON.stringify(dados));
+            navigate('/rastreio');
+        }
     }
   return (
     <div className='contentArea'>
@@ -41,7 +69,11 @@ export default function Home() {
                     <img src={headlineHome}/>
                     <p>Simplifique a sua experiência de rastreamento com o nosso serviço confiável e fácil de usar.</p>
                     
-                    <InputHome metodo={clickSearch}/>
+                    <InputHome 
+                        metodo={buscarPacote} 
+                        codigoRastreio={codigoRastreio} 
+                        setCodigoRastreio={setCodigoRastreio}
+                    />
                 </div>
                 <img src={ilustrationImg}/>
             </div>

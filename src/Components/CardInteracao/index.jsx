@@ -3,14 +3,14 @@ import { CardInteracaoWrapper } from './styles/CardInteracaoWrapper'
 import { FaLocationDot } from "react-icons/fa6";
 import caminhaoImg from './../../assets/img/movimento-gray.png'; 
 
-export function CardInteracao({dataHora, descricaoInteracao, pais}) {
+export function CardInteracao({data, hora, descricaoInteracao, pais}) {
   return (
     <CardInteracaoWrapper>
         <div className='cardInteracaoWrapperDivForHover'>
 
         <div className='infosData'>
-            <p className='pDataInfosData'>{dataHora.data}</p>
-            <p>{dataHora.hora}</p>
+            <p className='pDataInfosData'>{data}</p>
+            <p>{hora}</p>
         </div>
         {/* ilustracao */}
         <div className='ilustracoesDiv'>
