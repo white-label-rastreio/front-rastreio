@@ -36,4 +36,10 @@ export const InputHomeWrapper = styled.div`
         font-size: 16px;
         width: 100%;
     }
+    .searchIcon{
+        fill: #fff;
+        width: 24px;
+        height: 24px;
+        font-size 24px;
+    }
 `

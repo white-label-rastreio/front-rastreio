@@ -1,11 +1,11 @@
-import React from 'react'
-import logo from './../../assets/img/logo.png';
-import { FooterWrapper } from './styles/FooterWrapper';
+import React from "react";
+import logo from "./../../assets/img/logo.png";
+import { FooterWrapper } from "./styles/FooterWrapper";
 
 export function Footer() {
   return (
     <FooterWrapper>
-        <p>2024 ©White Label by Tolen. Todos os direitos reservados.</p>
+      <p>2024 ©White Label. Todos os direitos reservados.</p>
     </FooterWrapper>
-  )
+  );
 }
