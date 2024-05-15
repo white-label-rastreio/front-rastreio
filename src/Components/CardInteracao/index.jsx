@@ -4,6 +4,7 @@ import { FaLocationDot } from "react-icons/fa6";
 import caminhaoImg from './../../assets/img/movimento-gray.png'; 
 
 export function CardInteracao({data, hora, descricaoInteracao, pais}) {
+    console.log(descricaoInteracao)
   return (
     <CardInteracaoWrapper>
         <div className='cardInteracaoWrapperDivForHover'>

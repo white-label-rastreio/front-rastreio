@@ -4,6 +4,7 @@ import { CardRastreioWrapper } from './styles/CardRastreioWrapper';
 import imgRastreioCard from './../../assets/img/location.png'
 
 export function CardRastreio({dados}) {
+  console.log(dados)
   return ( 
     <CardRastreioWrapper>
       <div className='rastreioWrapperCardInfos'>
