@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import headlineHome from "./../../assets/img/headlineHome.svg";
 import { InputHome } from "../../Components/inputHome";
 import { CardHome } from "../../Components/CardHome";
-import { Header } from "./../../Components/Header";
-import { Footer } from "./../../Components/Footer";
+import { Header } from "../../Components/Header";
+import { Footer } from "../../Components/Footer";
 
 import { Link, useNavigate } from "react-router-dom";
 
@@ -11,7 +11,7 @@ import entregaImg from "./../../assets/img/rastreamento.png";
 import codigoImg from "./../../assets/img/codigo.png";
 import ilustrationImg from "./../../assets/img/ilustration.png";
 import { api } from "../../services/api";
-import { usuarioAutenticado } from "./../../services/auth";
+import { usuarioAutenticado } from "../../services/auth";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
