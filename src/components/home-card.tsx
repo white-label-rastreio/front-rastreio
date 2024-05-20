@@ -3,6 +3,8 @@ interface HomeCardProps {
   title: string;
   description: string;
   code?: string;
+  primaryColor?: string;
+  secondaryColor?: string;
 }
 
 export const HomeCard = ({
@@ -10,7 +12,10 @@ export const HomeCard = ({
   description,
   image,
   title,
+  primaryColor,
+  secondaryColor,
 }: HomeCardProps) => {
+  console.log();
   return (
     <div className="border rounded-md shadow-sm items-start w-full  h-[300px] flex flex-col lg:flex-row lg:items-center gap-4 p-5 ">
       <div className="  w-full relative h-[250px] py-2  ">

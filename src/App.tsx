@@ -11,6 +11,8 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="rastreio/:id" element={<RastreioPage />} />
+          <Route path="/:store/rastreio/:id" element={<RastreioPage />} />
+          <Route path="/:store" element={<Home />} />
         </Route>
       </Routes>
     </main>

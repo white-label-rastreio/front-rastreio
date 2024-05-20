@@ -28,3 +28,14 @@ export interface InteracoesPedido {
   data: string;
   cpais?: string;
 }
+
+export interface StoreData {
+  cor_principal: string;
+  cor_secundaria: string;
+  description: string;
+  id: string;
+  logo: string;
+  name: string;
+  store_id: string;
+  title: string;
+}

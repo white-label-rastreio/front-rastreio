@@ -4,7 +4,7 @@ import { useDebounce } from "../hooks/use-debounce";
 import { getPostagem } from "../actions/getPostagem";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
-import { DataPostagem } from "../types";
+import { DataPostagem, StoreData } from "../types";
 
 export const SearchBar = () => {
   const [value, setValue] = useState("");
@@ -14,8 +14,17 @@ export const SearchBar = () => {
   const handleSubmit = async () => {
     try {
       const data: DataPostagem = await getPostagem(debouncedValue);
+
+      const storedStore = localStorage.getItem("dataStore");
+      if (storedStore) {
+        const store: StoreData = JSON.parse(storedStore);
+
+        navigate(`/${store.name}/rastreio/${data.codigoRastreio}`);
+      } else {
+        navigate(`/rastreio/${data.codigoRastreio}`);
+      }
+
       localStorage.setItem("postagemData", JSON.stringify(data));
-      navigate(`/rastreio/${data.codigoRastreio}`);
     } catch (error) {
       toast.error("Esse código não é válido!");
     }
