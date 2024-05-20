@@ -1,14 +1,11 @@
-import Logo from "../assets/img/logo.png";
+import { SearchBar } from "./search-bar";
 import HomeImage from "../assets/img/home-image.png";
 import HomeTextImage from "../assets/img/text-home.svg";
-import { SearchBar } from "./search-bar";
 
 export const Header = () => {
   return (
-    <header className="bg-[#2ac965] px-4 py-8">
-      <div className="max-w-screen-2xl mx-auto ">
-        <img src={Logo} alt="" />
-
+    <div className="bg-[#2ac965] pb-8">
+      <div className="max-w-screen-2xl mx-auto  px-4">
         <div className="flex max-lg:flex-col gap-16 ">
           <div className="flex flex-col justify-center">
             <img src={HomeTextImage} alt="Text header image" width={500} />
@@ -34,6 +31,6 @@ export const Header = () => {
           />
         </div>
       </div>
-    </header>
+    </div>
   );
 };
