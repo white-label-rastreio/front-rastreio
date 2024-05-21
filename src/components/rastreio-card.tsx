@@ -4,14 +4,18 @@ import LocationImage from "../assets/img/location.png";
 
 interface RastreioCardProps {
   data: DataPostagem | null;
+  primaryColor?: string;
 }
 
-export const RastreioCard = ({ data }: RastreioCardProps) => {
+export const RastreioCard = ({ data, primaryColor }: RastreioCardProps) => {
   return (
     <div className="flex justify-between p-3 md:p-7 border rounded-md md:h-[300px]">
       <div className="w-full md:w-[70%] flex flex-col ">
         <div className="flex flex-col md:items-start items-center">
-          <h1 className="font-semibold text-[#2ac965] text-2xl lg:text-3xl">
+          <h1
+            style={{ color: primaryColor ? primaryColor : "#2ac965" }}
+            className="font-semibold  text-2xl lg:text-3xl"
+          >
             Seu Codigo é:
           </h1>
           <span className="font-semibold  text-3xl lg:text-4xl ">
