@@ -52,7 +52,7 @@ export const Navbar = () => {
           <img
             src={dataStore?.logo ? dataStore.logo : Logo}
             alt="Logo"
-            className="absolute object-cover
+            className="absolute object-contain
              w-full h-full"
           />
         </div>
