@@ -44,11 +44,15 @@ const Home = () => {
       </section>
       <section className="flex flex-col lg:flex-row gap-5 py-24 max-w-screen-2xl mx-auto  px-4">
         <HomeCard
+          primaryColor={dataStore?.cor_principal}
+          secondaryColor={dataStore?.cor_secundaria}
           image={CodeImage}
           title="Rastreamento"
           description="Acompanhe em tempo real o status de entrega dos seus pacotes, saiba onde eles estão e esteja sempre um passo à frente"
         />
         <HomeCard
+          primaryColor={dataStore?.cor_principal}
+          secondaryColor={dataStore?.cor_secundaria}
           image={TrackingImage}
           title="
             Como rastrear um objeto?"
