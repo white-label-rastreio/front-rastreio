@@ -13,6 +13,8 @@ const Home = () => {
   const { store } = useParams();
   const [dataStore, setDataStore] = useState<StoreData | null>(null);
 
+  console.log(dataStore);
+  console.log(store);
   useEffect(() => {
     const fetchData = async () => {
       if (store) {
